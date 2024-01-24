@@ -16,8 +16,6 @@ COPY app.py .
 
 COPY . .
 
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
 ENV PYTHONWARNINGS=ignore
 
 RUN chmod -R 777 .
