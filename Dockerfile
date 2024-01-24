@@ -8,6 +8,8 @@ COPY .gf /root/.gf
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends gcc libcurl4-openssl-dev libc6-dev libssl-dev dnsutils && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install -y cargo
+
 RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
