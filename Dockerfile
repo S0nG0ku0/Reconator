@@ -8,8 +8,6 @@ COPY .gf /root/.gf
 
 RUN apt-get update -y && apt-get install -y curl && apt-get install -y --no-install-recommends gcc libcurl4-openssl-dev libc6-dev libssl-dev dnsutils && rm -rf /var/lib/apt/lists/*
 
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
 RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
@@ -17,6 +15,8 @@ RUN pip install -r requirements.txt
 COPY app.py .
 
 COPY . .
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ENV PYTHONWARNINGS=ignore
 
